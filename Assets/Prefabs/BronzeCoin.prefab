@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4436471731692758390}
   - component: {fileID: 2826821956684678192}
   - component: {fileID: 1894712612356340095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BronzeCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642ce08391190d44293e17439d64ed55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
+  rotationSpeed: 0
