@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 3796368426907047833}
   - component: {fileID: 3898931102176277261}
   - component: {fileID: 6581784095450764399}
-  - component: {fileID: 4400708760187507193}
   - component: {fileID: 5248633443059505879}
   - component: {fileID: 8600367577412796789}
   - component: {fileID: 5400228272012449323}
   m_Layer: 6
-  m_Name: Obstacle
+  m_Name: ObstacleRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,27 +93,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4400708760187507193
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7856284006871326101}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5248633443059505879
 MonoBehaviour:
   m_ObjectHideFlags: 0
