@@ -8,13 +8,16 @@ public class PlayerController : MonoBehaviour
     private bool isOnGround;
 
     private Vector3 movement;
-    private int moveSpeed = 10;
-    private int jumpForce = 10;
+    private Transform cameraTransform;
+
+    [SerializeField] private float moveSpeed = 20;
+    [SerializeField] private float jumpForce = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        cameraTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -38,8 +41,20 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        Vector3 cameraTransformForward = cameraTransform.forward;
+        Vector3 cameraTransformRight = cameraTransform.right;
+        cameraTransformForward.y = 0;
+        cameraTransformRight.y = 0;
+        cameraTransformForward.Normalize();
+        cameraTransformRight.Normalize();
+
+        Vector3 cameraDirection = (cameraTransformForward * horizontalInput + cameraTransformRight * verticalInput).normalized;
+
+        movement = cameraDirection * moveSpeed;
+        playerRb.AddForce(movement, ForceMode.Force);
     }
 
     /// <summary>
