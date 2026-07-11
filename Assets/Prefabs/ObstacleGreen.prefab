@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1837820401508015945}
   - component: {fileID: 6070548991283597752}
   - component: {fileID: 7601679342457011943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObstacleGreen
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
