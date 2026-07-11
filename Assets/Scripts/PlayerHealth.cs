@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int maxHealth = 15;
+    private int maxHealth = 50;
     private int currentHealth;
     private bool isDead;
 
@@ -26,4 +26,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         Debug.Log("Your current health is " + currentHealth);
     }
+
+    public void Damage()
+    {
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("You lose");
+        }
+    }
+
 }

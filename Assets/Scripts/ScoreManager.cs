@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    private int score;
+    private int maxScore;
+    private bool hasWon;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +16,14 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Score()
+    {
+        if (score > maxScore)
+        {
+            hasWon = true;
+            Debug.Log("You win");
+        }
     }
 }
