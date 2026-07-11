@@ -27,6 +27,10 @@ public class Obstacle : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
     
+    /// <summary>
+    /// checks for collisions between player and wall
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,7 +43,9 @@ public class Obstacle : MonoBehaviour
             DestroyAndRespawn();
         }
     }
-
+    /// <summary>
+    /// Destroys the object, and then calls the spawn obstacle method from obstaclespawner script to spawn a new obstacle in its place
+    /// </summary>
     private void DestroyAndRespawn()
     {
         Destroy(gameObject);

@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
     }
 
+    /// <summary>
+    /// Handles all movement, including movement relative to the camera, jumping and falling
+    /// </summary>
     void HandleMovement()
     {
         float moveX = Input.GetAxisRaw("Horizontal");

@@ -33,6 +33,9 @@ public class Coin : MonoBehaviour
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Checks if the coin is on the ground, and moves it up and down accordingly
+    /// </summary>
     void MoveUpAndDown()
     {
         if (isOnGround == true)
@@ -45,7 +48,10 @@ public class Coin : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Checks for collisions with the player and ground objects
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
