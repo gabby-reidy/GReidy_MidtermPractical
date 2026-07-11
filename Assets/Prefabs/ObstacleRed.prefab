@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5248633443059505879}
   - component: {fileID: 8600367577412796789}
   - component: {fileID: 5400228272012449323}
+  - component: {fileID: -4713239052863633350}
   m_Layer: 6
   m_Name: ObstacleRed
   m_TagString: Obstacle
@@ -153,3 +154,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4713239052863633350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856284006871326101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabf6ba86d80dc34e9a044852894f7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  HasWon: 0

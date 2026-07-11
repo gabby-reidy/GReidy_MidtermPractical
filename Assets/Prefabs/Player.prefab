@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5490787919959969359}
   - component: {fileID: 5255385828154442248}
   - component: {fileID: 1824434376188457481}
+  - component: {fileID: 3434011358454404727}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -129,6 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cfb0508fcd69043b8402aa35e573cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  speed: 10
+  rotationSpeed: 10
+  jumpVelocity: 10
+  gravity: -20
+  fallMultiplier: 5
+  cameraTransform: {fileID: 0}
 --- !u!114 &5255385828154442248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c6a17a7f75dda43ab0ddcb8a92c70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  isDead: 0
 --- !u!54 &1824434376188457481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,3 +176,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3434011358454404727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91824395772281795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabf6ba86d80dc34e9a044852894f7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  HasWon: 0

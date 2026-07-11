@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     private Vector3 direction;
     private Rigidbody obstacleRb;
     private ObstacleSpawner obstacleSpawner;
+    private PlayerHealth playerHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,7 @@ public class Obstacle : MonoBehaviour
         speed = Random.Range(5, 15);
         direction = new Vector3(Random.Range(-5f, 5f), 1f, Random.Range(-5f, 5f)).normalized;
         obstacleRb.linearVelocity = direction * speed;
+        playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            playerHealth.Damage(damage);
             DestroyAndRespawn();
         }
         else if (collision.gameObject.CompareTag("Wall"))

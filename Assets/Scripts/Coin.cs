@@ -16,6 +16,7 @@ public class Coin : MonoBehaviour
     {
         coinRb = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(6, 7);
+        scoreManager = GameObject.Find("Player").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame

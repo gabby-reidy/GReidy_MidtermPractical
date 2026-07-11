@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -13,7 +14,7 @@ public class ObstacleSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnObstacles", spawnDelay, spawnInterval);
+        InvokeRepeating(nameof(SpawnObstacles), spawnDelay, spawnInterval);
     }
 
     // Update is called once per frame
@@ -25,11 +26,11 @@ public class ObstacleSpawner : MonoBehaviour
     public void SpawnObstacles() 
     {
         int spawnIndex = Random.Range(0, spawnPoints.Length);
-        Transform randomSpawnPoint = spawnPoints[spawnIndex];
+        Transform randomSpawnPoint = spawnPoints[spawnIndex];  
 
         GameObject spawn = Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)], randomSpawnPoint.position, Quaternion.identity);
         Obstacle obstacleRef = spawn.GetComponent<Obstacle>();
-  
+
         ObstacleCount++;
     }
 }

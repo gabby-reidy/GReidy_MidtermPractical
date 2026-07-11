@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5491686875632053370}
   - component: {fileID: 2219556772871174607}
   - component: {fileID: 2727648141913993038}
+  - component: {fileID: -6536842955687349643}
   m_Layer: 7
   m_Name: SilverCoin
   m_TagString: Coin
@@ -156,3 +157,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-6536842955687349643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572289996669074911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabf6ba86d80dc34e9a044852894f7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  HasWon: 0

@@ -4,7 +4,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     [SerializeField] private int rotationSpeed = 10;
-    [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float jumpVelocity = 10f;
     [SerializeField] private float gravity = -20f;
     [SerializeField] private int fallMultiplier = 5;
@@ -49,7 +48,7 @@ public class PlayerController : MonoBehaviour
         cameraForward.Normalize();
         cameraRight.Normalize();
 
-        Vector3 cameraMovement = (cameraRight * moveX + cameraForward * moveZ), normalized;
+        Vector3 cameraMovement = (cameraRight * moveX + cameraForward * moveZ).normalized;
 
         bool isFalling = verticalVelocity < 0f && hasJumped;
         float gravityThisFrame = gravity;
