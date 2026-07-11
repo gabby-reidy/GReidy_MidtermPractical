@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   moveSpeed: 5
   bounce: 5
+  value: 1
 --- !u!54 &5021080111003503233
 Rigidbody:
   m_ObjectHideFlags: 0

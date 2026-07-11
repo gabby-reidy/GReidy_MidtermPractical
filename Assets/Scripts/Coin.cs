@@ -6,9 +6,10 @@ public class Coin : MonoBehaviour
     private float rotationSpeed = 10f;
     [SerializeField] private float moveSpeed = 10f;
     private bool isOnGround;
-    private float yBound;
     private Rigidbody coinRb;
     [SerializeField] private float bounce = .5f;
+    [SerializeField] private int value;
+    private ScoreManager scoreManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +29,7 @@ public class Coin : MonoBehaviour
     /// </summary>
     void Rotate()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
     void MoveUpAndDown()
@@ -48,6 +49,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            scoreManager.HandleScoring(value);
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Ground"))
