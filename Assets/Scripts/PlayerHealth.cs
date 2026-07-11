@@ -4,7 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     private int maxHealth = 50;
     private int currentHealth;
-    private bool isDead;
+    public bool isDead;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,11 +27,15 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Your current health is " + currentHealth);
     }
 
-    public void Damage()
+    public void Damage(int damage)
     {
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            isDead = true;
             Debug.Log("You lose");
         }
     }
