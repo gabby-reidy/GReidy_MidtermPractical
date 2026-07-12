@@ -8,6 +8,9 @@ public class Obstacle : MonoBehaviour
     private Rigidbody obstacleRb;
     private ObstacleSpawner obstacleSpawner;
     private PlayerHealth playerHealth;
+    private float minPosition = -5f;
+    private float maxPosition = 5f;
+    private float fixedYPosition = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +19,7 @@ public class Obstacle : MonoBehaviour
         obstacleRb = GetComponent<Rigidbody>();
         damage = Random.Range(1, 6);
         speed = Random.Range(5, 15);
-        direction = new Vector3(Random.Range(-5f, 5f), 1f, Random.Range(-5f, 5f)).normalized;
+        direction = new Vector3(Random.Range(minPosition, maxPosition), fixedYPosition, Random.Range(minPosition, maxPosition)).normalized;
         obstacleRb.linearVelocity = direction * speed;
         playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
